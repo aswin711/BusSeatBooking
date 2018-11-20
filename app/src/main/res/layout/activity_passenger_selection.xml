@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PassengerSelectionActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passenger seat implementation in an activity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="1"
+            android:textOff="1"
+            android:textOn="1"
+            android:id="@+id/_1"
+            android:background="@drawable/selecter_booked"
+            android:layout_margin="4dp"/>
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="2"
+            android:textOff="2"
+            android:textOn="2"
+            android:id="@+id/_2"
+            android:background="@drawable/selecter_booked"
+            android:layout_margin="4dp"/>
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="3"
+            android:textOff="3"
+            android:textOn="3"
+            android:id="@+id/_3"
+            android:background="@drawable/selecter_booked"
+            android:layout_margin="4dp"/>
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="4"
+            android:textOff="4"
+            android:textOn="4"
+            android:id="@+id/_4"
+            android:background="@drawable/selecter_booked"
+            android:layout_margin="4dp"/>
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="5"
+            android:textOff="5"
+            android:textOn="5"
+            android:id="@+id/_5"
+            android:background="@drawable/selecter_booked"
+            android:layout_margin="4dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:layout_marginTop="10dp"
+        android:id="@+id/activity_ok"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Passenger seat implementation in a recyclerview"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview_passenger_seat"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:layout_marginTop="10dp"
+        android:id="@+id/recyclerview_ok"/>
+</LinearLayout>

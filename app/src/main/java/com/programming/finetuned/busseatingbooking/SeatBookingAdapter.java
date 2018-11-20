@@ -23,10 +23,17 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
     private ArrayList<Integer> ladiesSeats;
     private ArrayList<Integer> seniorsSeats;
     private int seatLimit;
+    private int size;
+    private String label;
 
     public SeatBookingAdapter() {
         this.userBookedSeats = new ArrayList<>();
+        bookedSeats = new ArrayList<>();
+        ladiesSeats = new ArrayList<>();
+        seniorsSeats = new ArrayList<>();
         this.seatLimit = 1;
+        this.size = 1;
+        this.label = null;
     }
 
     public void setBookedSeats(ArrayList<Integer> seats) {
@@ -48,6 +55,15 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
         this.seatLimit = limit;
     }
 
+    public void setSeat(int size) {
+        this.size = size;
+        notifyDataSetChanged();
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
 
 
     @NonNull
@@ -65,7 +81,7 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
 
     @Override
     public int getItemCount() {
-        return 8;
+        return size;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -183,6 +199,7 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
 
         public void init(int pos) {
 
+
             int bookedSeat = getSectionNumber(bookedSeats,pos);
             if (bookedSeat > -1) {
                 setBackground(bookedSeat,R.drawable.selecter_booked, false);
@@ -279,7 +296,7 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
 
                 }
 
-                ((BookingInterface)context).onSeatsBooked(userBookedSeats);
+                ((BookingInterface)context).onSeatsBooked(userBookedSeats, label);
             }
 
         }
@@ -288,6 +305,6 @@ public class SeatBookingAdapter extends RecyclerView.Adapter<SeatBookingAdapter.
 
 
     public interface BookingInterface {
-        void onSeatsBooked(ArrayList<Integer> seats);
+        void onSeatsBooked(ArrayList<Integer> seats, String label);
     }
 }
